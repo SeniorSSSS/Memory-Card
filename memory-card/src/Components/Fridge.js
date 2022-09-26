@@ -7,8 +7,6 @@ export function Fridge(props) {
     imageNumber,
     clickBolean,
     setClickBolean,
-    //componentOneBolean,
-    //setComponentOneBolean,
     // bestScore,
     // setbestScore,
     // currentScore,
@@ -26,51 +24,70 @@ export function Fridge(props) {
         //it doesnt tell it where to go
         //so maybe return updated array
         //or idk
-        console.log('hi');
-        return setClickBolean(previousState => {
-          console.log('hi');
-        return {...previousState,a: true}});
-        // clickBolean.clickBolean.a = true;
-        // return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, a: true };
+        });
       case "2":
-        clickBolean.clickBolean.b = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, b: true };
+        });
       case "3":
-        clickBolean.clickBolean.c = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, c: true };
+        });
       case "4":
-        clickBolean.clickBolean.d = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, d: true };
+        });
       case "5":
-        clickBolean.clickBolean.e = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, e: true };
+        });
       case "6":
-        clickBolean.clickBolean.f = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, f: true };
+        });
       case "7":
-        clickBolean.clickBolean.g = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, g: true };
+        });
       case "8":
-        clickBolean.clickBolean.h = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, h: true };
+        });
       case "9":
-        clickBolean.clickBolean.i = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, i: true };
+        });
       case "10":
-        clickBolean.clickBolean.j = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, j: true };
+        });
       case "11":
-        clickBolean.clickBolean.k = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, k: true };
+        });
       case "12":
-        clickBolean.clickBolean.l = true;
-        return;
+        console.log("the change will happen now");
+        return setClickBolean((previousState) => {
+          return { ...previousState, l: true };
+        });
       default:
-      console.log('how did this happen');
+        console.log("If you see this how did you do this even");
     }
     console.log("hi");
   };
-
 
   const handleClick = (event, thenumber) => {
     //the prop imageNUmber is an object so you need that last part
@@ -81,33 +98,26 @@ export function Fridge(props) {
       "shouldbetheclickedimagenumber which was assigned to thecurrentnumber variable"
     );
     console.log(thecurrentnumber);
-    //define func
-    //usefunc
-    //for some reason removeing scb fixes it
-    //and it can keep track of the value
-    //why is scb even needed then smh
-    //oo give button clickb to title and see if that component catches it 2.
-    changeClickBolean(thecurrentnumber, { clickBolean});
+    changeClickBolean(thecurrentnumber, { clickBolean });
   };
-  const whatisclickbolean = () => {
-    console.log({clickBolean});
-  }
+  // const whatisclickbolean = () => {
+  //   console.log({ clickBolean });
+  // };
 
   return (
-    <div>
-    <button onClick={whatisclickbolean}>yo</button>
-    <div
-      id={cardNumber}
-      className="innergrid"
-      onClick={(event) => handleClick(event, { imageNumber })}
-    >
-      <img src={imagelink} alt="afoodimage"></img>
-    </div>
-    </div>
+    
+      <div
+        id={cardNumber}
+        className="innergrid"
+        onClick={(event) => handleClick(event, { imageNumber })}
+      >
+        <img src={imagelink} alt="afoodimage"></img>
+
+        {/* <button onClick={whatisclickbolean}>yo</button> */}
+      </div>
+    
   );
 }
-
-
 
 //now each time the function runs it takes the image n and uses it with the setclickbolean func to switch it. Then the reshuffle happens.
 

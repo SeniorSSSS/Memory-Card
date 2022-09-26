@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TitleSection } from "./Components/TitleSection";
 import { Fridge } from "./Components/Fridge";
 import { useState } from "react";
@@ -16,52 +16,54 @@ import food11 from "./Assets/food11.jpeg";
 import food12 from "./Assets/food12.jpeg";
 
 import "./Styles/App.css";
+const cnumber = [
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+  "eleven",
+  "twelve",
+];
+
+const shuffle = (array) => {
+  array.sort(() => Math.random() - 0.5);
+};
+
+
+
 
 function App() {
+
+const [clickBolean, setClickBolean] = useState({
+  a: false,
+  b: false,
+  c: false,
+  d: false,
+  e: false,
+  f: false,
+  g: false,
+  h: false,
+  i: false,
+  j: false,
+  k: false,
+  l: false
+});
   const [bestScore, setbestScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
-  const [clickBolean, setClickBolean] = useState({
-    a: false,
-    b: false,
-    c: false,
-    d: false,
-    e: false,
-    f: false,
-    g: false,
-    h: false,
-    i: false,
-    j: false,
-    k: false,
-    l: false
-});
 
-  //const [idforimage1,setId] = useState();
 
-  const [componentOneBolean, setComponentOneBolean] = useState(false);
-
-  //on any click variable call shuff on cnumber
-  const cnumber = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-    "ten",
-    "eleven",
-    "twelve",
-  ];
-  // const shuffle = (array) => {
-  //   array.sort(() => Math.random() - 0.5);
-  // };
-
-  // useEffect(() => {
-  //   //Runs on the first render
-  //   //And any time any dependency value changes
-  // }, [clickBolean]]);
+  useEffect(() => {
+    //Runs on the first render
+    //And any time any dependency value changes
+    shuffle(cnumber);
+    console.log(cnumber);
+  }, [clickBolean]); 
 
   return (
     <div className="MainContainer">
@@ -69,7 +71,7 @@ function App() {
       <div className="FoodGrid12Spaces">
         <Fridge
           imagelink={food1}
-          cardNumber="hi"
+          cardNumber={cnumber[0]}
           imageNumber="1"
           bestScore={bestScore}
           setbestScore={setbestScore}
@@ -77,8 +79,6 @@ function App() {
           setCurrentScore={setCurrentScore}
           clickBolean={clickBolean}
           setClickBolean={setClickBolean}
-          componentOneBolean={componentOneBolean}
-          setComponentOneBolean={setComponentOneBolean}
         />
         <Fridge
           imagelink={food2}
