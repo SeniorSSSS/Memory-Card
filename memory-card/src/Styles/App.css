@@ -1,0 +1,168 @@
+.FoodGrid12Spaces {
+  
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(3,1fr);
+  align-content: center;
+  gap: 30px;
+}
+
+/* This sets the initial position for objects in row 1 */
+#one {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#three {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#four {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+/* This sets the initial position for objects in row 2 */
+#five {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+#six {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+#seven {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+#eight {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+/* This sets the initial position for objects in row 3 */
+#nine {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+#ten {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+#eleven {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+#twelve {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+.innergrid {
+  
+ display:flex;
+align-items: center; 
+justify-content: center;
+height: 10rem;
+
+
+}
+.innergrid img {
+  border-radius: 50%;
+  border: 3px solid rgb(226, 198, 43);
+  box-shadow:  0 0 5px 2.5px rgba(0,0,0,0.6);
+}
+
+.innergrid img:hover {
+  border-radius: 40%;
+  border: 3pxrem solid rgb(43, 192, 226);
+  box-shadow:  0 0 5px 2.5px rgba(0,0,0,0.6);
+}
+
+
+.MainContainer {
+  background-color: blueviolet;
+}
+
+.TitleSectionText {
+  font-weight: bold;
+ color: white;
+ text-shadow: 1px 1px #0a0009;
+ outline-color: aqua;
+ 
+}
+
+.TitleSectionText h1 {
+  text-decoration: underline;
+  font-size: 30px;
+  
+}
+.TitleSectionText h2 {
+  text-decoration: underline;
+  font-size: 30px;
+  
+}
+
+.TitleSectionText ul {
+  font-size: 30px;
+}
+.TitleAreaContainer {
+  font-weight: bold;
+  font-size: 30px;
+ color: white;
+ text-shadow: 1px 1px #0a0009;
+ display: flex;
+ justify-content: space-between;
+ align-content: center;
+
+}
+
+body {
+  background-color: rgb(2, 1, 1);
+}

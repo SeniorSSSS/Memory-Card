@@ -1,0 +1,12 @@
+.MainContainer {
+  background-image: url(/home/zedthecoder/1.repos/Memory-Card/memory-card/src/Assets/animebackground.webp);
+   /* Full height */
+   height: 100vh;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+
