@@ -16,6 +16,7 @@ import food11 from "./Assets/food11.jpeg";
 import food12 from "./Assets/food12.jpeg";
 
 import "./Styles/App.css";
+
 const cnumber = [
   "one",
   "two",
@@ -35,12 +36,7 @@ const shuffle = (array) => {
   array.sort(() => Math.random() - 0.5);
 };
 
-
-
-
-function App() {
-
-const [clickBolean, setClickBolean] = useState({
+const initialState = {
   a: false,
   b: false,
   c: false,
@@ -53,9 +49,15 @@ const [clickBolean, setClickBolean] = useState({
   j: false,
   k: false,
   l: false
-});
-  const [bestScore, setbestScore] = useState(0);
-  const [currentScore, setCurrentScore] = useState(0);
+};
+
+
+function App() {
+
+const [clickBolean, setClickBolean] = useState(initialState);
+
+const [bestScore, setbestScore] = useState(0);  const [currentScore, setCurrentScore] = useState(0);
+
 
 
   useEffect(() => {
@@ -70,6 +72,7 @@ const [clickBolean, setClickBolean] = useState({
       <TitleSection bestScore={bestScore} currentScore={currentScore} clickBolean= {clickBolean}/>
       <div className="FoodGrid12Spaces">
         <Fridge
+          initialState={initialState}
           imagelink={food1}
           cardNumber={cnumber[0]}
           imageNumber="1"
@@ -81,6 +84,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food2}
           cardNumber={cnumber[1]}
           imageNumber="2"
@@ -91,7 +95,8 @@ const [clickBolean, setClickBolean] = useState({
           clickBolean={clickBolean}
           setClickBolean={setClickBolean}
         />
-        <Fridge
+        <Fridge 
+          initialState={initialState}
           imagelink={food3}
           cardNumber={cnumber[2]}
           imageNumber="3"
@@ -103,6 +108,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food4}
           cardNumber={cnumber[3]}
           imageNumber="4"
@@ -114,6 +120,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food5}
           cardNumber={cnumber[4]}
           imageNumber="5"
@@ -125,6 +132,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food6}
           cardNumber={cnumber[5]}
           imageNumber="6"
@@ -136,6 +144,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food7}
           cardNumber={cnumber[6]}
           imageNumber="7"
@@ -147,6 +156,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food8}
           cardNumber={cnumber[7]}
           imageNumber="8"
@@ -158,6 +168,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food9}
           cardNumber={cnumber[8]}
           imageNumber="9"
@@ -169,6 +180,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food10}
           cardNumber={cnumber[9]}
           imageNumber="10"
@@ -180,6 +192,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food11}
           cardNumber={cnumber[10]}
           imageNumber="11"
@@ -191,6 +204,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
         <Fridge
+          initialState={initialState}
           imagelink={food12}
           cardNumber={cnumber[11]}
           imageNumber="12"
@@ -202,6 +216,7 @@ const [clickBolean, setClickBolean] = useState({
           setClickBolean={setClickBolean}
         />
       </div>
+      <p></p>
       App
     </div>
   );
@@ -209,37 +224,3 @@ const [clickBolean, setClickBolean] = useState({
 
 export default App;
 
-/* //ids 1-12 are each associated with specific position
-//when useeffect triggered by click it goes and causes shuffleid to run
-//this function causes the ids to shuffle.
-*/
-
-// I have an array with the values one to three
-//const array = [one,two, three]
-//if a condition passes i want use useeffect to give each component a random array value as its prop without duplicating any values
-
-//like on trigger one you get this
-// <Component cardid={one} />
-// <Component cardid={two} />
-// <Component cardid={three} />
-
-//then on trigger two you get this
-// <Component cardid={three} />
-// <Component cardid={one} />
-// <Component cardid={two} />
-
-//---
-// Best score -usestate
-// best score updated by useeffect/ condition is on every rerender & only if >current value
-
-// current score -usestate
-
-// best/current score & click saved on props and given to parent & their setfunctions also.
-
-// click -usestate
-// click (t/f) -initially false & setstate changes it on onclick
-
-// Game Header
-// Score Board
-// Sword Container
-// Could set state equal to an array filled with false equal to amount of elements you have. Then just map each to corresponding idx

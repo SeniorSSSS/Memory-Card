@@ -7,13 +7,33 @@ export function Fridge(props) {
     imageNumber,
     clickBolean,
     setClickBolean,
-    // bestScore,
-    // setbestScore,
-    // currentScore,
-    // setCurrentScore,
+    initialState,
+    bestScore,
+    setbestScore,
+    currentScore,
+    setCurrentScore,
   } = props;
+ 
+//aight so each time current score set.
+//run assitant function to
 
-  const changeClickBolean = (thecurrentnumber, clickBolean) => {
+  const bestScorechanger = (currentScore,bestScore) => {
+    console.log(bestScore);
+    console.log('the cs is' + currentScore.currentScore);
+      console.log('the bs is' + bestScore);
+    if (currentScore.currentScore > bestScore) {
+      setbestScore(currentScore.currentScore + 1);
+    } else {
+      console.log('you have yet to bet your high score');
+    }
+  }
+
+
+
+
+
+
+  const changeClickBolean = (thecurrentnumber, clickBolean,currentScore) => {
     console.log("change click bolean starts here");
     console.log({ clickBolean });
     console.log(thecurrentnumber);
@@ -21,68 +41,177 @@ export function Fridge(props) {
     let thenumberusedforswitchcase = thecurrentnumber;
     switch (thenumberusedforswitchcase) {
       case "1":
-        //it doesnt tell it where to go
-        //so maybe return updated array
-        //or idk
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, a: true };
-        });
+        // console.log('doesitwork');
+        console.log(clickBolean.clickBolean.a)
+        if (clickBolean.clickBolean.a === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, a: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
+      
       case "2":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, b: true };
-        });
+        if (clickBolean.clickBolean.b === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, b: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
+
       case "3":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, c: true };
-        });
+        if (clickBolean.clickBolean.c === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, c: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "4":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, d: true };
-        });
+        if (clickBolean.clickBolean.d === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, d: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "5":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, e: true };
-        });
+        if (clickBolean.clickBolean.e === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, e: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "6":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, f: true };
-        });
+        if (clickBolean.clickBolean.f === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, f: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "7":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, g: true };
-        });
+        if (clickBolean.clickBolean.g === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, g: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "8":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, h: true };
-        });
+        if (clickBolean.clickBolean.h === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, h: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "9":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, i: true };
-        });
+        if (clickBolean.clickBolean.i === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, i: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "10":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, j: true };
-        });
+        if (clickBolean.clickBolean.j === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, j: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "11":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, k: true };
-        });
+        if (clickBolean.clickBolean.k === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, k: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       case "12":
-        console.log("the change will happen now");
-        return setClickBolean((previousState) => {
-          return { ...previousState, l: true };
-        });
+        if (clickBolean.clickBolean.l === false) {
+          console.log("the change will happen now and show on next console.log");
+          console.log(currentScore.currentScore);
+          console.log(typeof(currentScore.currentScore));
+          setCurrentScore(Number(currentScore.currentScore) + 1);
+          bestScorechanger(currentScore,bestScore);
+          return setClickBolean((previousState) => {return { ...previousState, l: true };
+          });
+        } else {
+          setCurrentScore(0);
+          setClickBolean(initialState);
+        }
+        break;
       default:
         console.log("If you see this how did you do this even");
     }
@@ -98,7 +227,7 @@ export function Fridge(props) {
       "shouldbetheclickedimagenumber which was assigned to thecurrentnumber variable"
     );
     console.log(thecurrentnumber);
-    changeClickBolean(thecurrentnumber, { clickBolean });
+    changeClickBolean(thecurrentnumber, { clickBolean }, {currentScore});
   };
   // const whatisclickbolean = () => {
   //   console.log({ clickBolean });
